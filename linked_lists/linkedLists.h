@@ -30,6 +30,8 @@ LinkedList *create_linked_lst();
 
 void free_lk(struct node **);
 
+LinkedList *ordered_insert_lk(struct node *, int);
+
 void insert_begin_lk(struct node **, int);
 
 void insert_end_lk(struct node *, int);

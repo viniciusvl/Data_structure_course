@@ -132,6 +132,33 @@ void free_lk(struct node **l){
 }
 
 
+LinkedList *ordered_insert_lk(struct node *l, int value){
+    struct node *new = (struct node *) malloc(sizeof(struct node));
+    if (!new){
+        printf("Don't created the variable in the heap");
+        return l;
+    }
+    new->info = value;
+
+    struct node *p = l, 
+                *ant = NULL;
+
+    while (p != NULL && p->info < value){
+        ant = p;
+        p = p->prox;
+    }
+
+    if (!ant){
+        new->prox = p;
+        l = new;
+    }else{
+        new->prox = ant->prox;
+        ant->prox = new;
+    }
+
+    return l;
+}
+
 int searchElement_lk(struct node *l, int value){
     struct node *current = l;
     int i;
