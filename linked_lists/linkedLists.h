@@ -28,6 +28,8 @@ typedef struct node {
 
 LinkedList *create_linked_lst();
 
+void free_lk(struct node **);
+
 void insert_begin_lk(struct node **, int);
 
 void insert_end_lk(struct node *, int);
@@ -36,7 +38,7 @@ void remove_begin_lk(struct node **);
 
 LinkedList *remove_end_lk(struct node *l);
 
-int remove_element(struct node *);
+LinkedList *remove_element_lk(struct node *, int value);
 
 void show_lk(struct node *);
 

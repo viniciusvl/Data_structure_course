@@ -79,10 +79,57 @@ LinkedList *remove_end_lk(struct node *l){
     return l;
 }
 
-int remove_element_lk(struct node *l){
+
+LinkedList *remove_element_lk(struct node *l, int value){
+    if (is_empty_lk(l)){
+        printf("List is empty");
+        return l;
+    }
+
+    struct node *p = l,
+                *ant = NULL;
     
+    while(p != NULL && p->info != value){
+        ant = p;
+        p = p->prox;
+    }
+
+    if (p == NULL){
+        printf("Value %d is not in the list\n", value);
+        return l;
+    }
+
+    // if has not ant, so there is only one element
+    if (!ant){
+        l = p->prox;
+    } else {
+        ant->prox = p->prox;
+    }
+
+    free(p);
+
+    return l;
 }
 
+
+void free_lk(struct node **l){
+    if (is_empty_lk(*l)){
+        printf("List is empty");
+        return;
+    }
+
+    struct node *p = *l,
+                *current = NULL;
+
+    while (p != NULL){
+        current = p;
+        p = p->prox;
+
+        free(current);
+    }
+    free(*l);
+    *l = NULL;
+}
 
 
 void show_lk(struct node *header){
@@ -91,8 +138,9 @@ void show_lk(struct node *header){
     for (current = header; current != NULL; current = current->prox){
         printf("%d ", current->info);
     }
+    
     if (current){
-        printf("/n");
+        printf("\n");
     }
 }
 
