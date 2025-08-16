@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "./listas_simples/listasSimples.h"
+#include "./simple_lists/simpleLists.h"
 #include "./linked_lists/linkedLists.h"
 
 int main(){
