@@ -132,13 +132,22 @@ void free_lk(struct node **l){
 }
 
 
+int searchElement_lk(struct node *l, int value){
+    struct node *current = l;
+    int i;
+
+    for (i = 0; current != NULL && current->info != value; i++, current = current->prox);
+
+    return (current != NULL) ? i : -1;
+}
+
 void show_lk(struct node *header){
     struct node *current;
 
     for (current = header; current != NULL; current = current->prox){
         printf("%d ", current->info);
     }
-    
+
     if (current){
         printf("\n");
     }

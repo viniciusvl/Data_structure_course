@@ -40,6 +40,9 @@ LinkedList *remove_end_lk(struct node *l);
 
 LinkedList *remove_element_lk(struct node *, int value);
 
+// return index, -1 there is no the elemente in list
+int searchElement_lk(struct node *, int);
+
 void show_lk(struct node *);
 
 #endif
