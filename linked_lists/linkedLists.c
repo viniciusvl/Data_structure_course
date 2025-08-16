@@ -79,6 +79,11 @@ LinkedList *remove_end_lk(struct node *l){
     return l;
 }
 
+int remove_element_lk(struct node *l){
+    
+}
+
+
 
 void show_lk(struct node *header){
     struct node *current;

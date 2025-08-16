@@ -36,6 +36,8 @@ void remove_begin_lk(struct node **);
 
 LinkedList *remove_end_lk(struct node *l);
 
+int remove_element(struct node *);
+
 void show_lk(struct node *);
 
 #endif
