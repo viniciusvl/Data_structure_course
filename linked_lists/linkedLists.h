@@ -13,6 +13,8 @@
 // make shift to move the elements. Therefore, the linked list's time complexity for insertion
 // is O(1) in the any case, whereas array's time complexity is O(n) in the worst case
 
+//  Obs.: Insertion in the end of the list is O(n) and in the beginning is O(1)
+
 //  2 - Space allocation: the memory required to make a linked list is dinamyc, whereas in arrays,
 // the memory required is static. Therefore, when an array is assigned, the whole memory is allocated
 // for every element, even though the array is empty 
@@ -45,6 +47,12 @@ LinkedList *remove_element_lk(struct node *, int value);
 // return index, -1 there is no the elemente in list
 int searchElement_lk(struct node *, int);
 
+// show list with a linear way
 void show_lk(struct node *);
+
+// implemented with recursive way
+void show_lk_rec(struct node *);
+
+void show_lk_rec_reverse(struct node *);
 
 #endif

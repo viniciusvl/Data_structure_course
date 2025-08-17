@@ -7,6 +7,7 @@ LinkedList *create_linked_lst(){
     return NULL;
 }
 
+// It's O(1), because assigning pointers 
 void insert_begin_lk(struct node **header, int value){
     struct node *new = (struct node *) malloc(sizeof(struct node));
     if (!new){
@@ -21,6 +22,7 @@ void insert_begin_lk(struct node **header, int value){
     // Don't free new, because it will erase struct node, that is in the heap
 } 
 
+// it's O(n), becaus we need iterate until end of the list
 void insert_end_lk(struct node *l, int value){ 
     struct node *new = (struct node *) malloc(sizeof(struct node));
     if (!new){
@@ -176,6 +178,26 @@ void show_lk(struct node *header){
     }
 
     if (current){
+        printf("\n");
+    }
+}
+
+void show_lk_rec(struct node *l){
+    if (l != NULL){
+        printf("%d ", l->info);
+
+        show_lk_rec(l->prox);
+    } else {
+        printf("\n");
+    }
+}
+
+void show_lk_rec_reverse(struct node *l){
+    if (l != NULL){
+        show_lk_rec_reverse(l->prox);
+
+        printf("%d ", l->info);
+    } else {
         printf("\n");
     }
 }
