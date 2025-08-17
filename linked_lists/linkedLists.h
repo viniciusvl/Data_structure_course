@@ -53,6 +53,9 @@ void show_lk(struct node *);
 // implemented with recursive way
 void show_lk_rec(struct node *);
 
+// implemented with recusrive war
 void show_lk_rec_reverse(struct node *);
+
+int cmp_lk(LinkedList *, LinkedList *);
 
 #endif

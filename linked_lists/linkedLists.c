@@ -202,3 +202,16 @@ void show_lk_rec_reverse(struct node *l){
     }
 }
 
+int cmp_lk(LinkedList *l1, LinkedList *l2){
+    LinkedList *p = l1,
+               *m = l2;
+
+    while (p != NULL && p != NULL){
+        p = p->prox;
+        m = m->prox;
+    }
+    
+    // if p == m, p and m are both equal NULL
+    return p == m;
+}
+
