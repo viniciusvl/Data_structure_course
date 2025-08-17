@@ -1,15 +1,13 @@
 #include <stdio.h>
-#include "./simple_lists/simpleLists.h"
-#include "./linked_lists/linkedLists.h"
+#include "./lists/simple_lists/simpleLists.h"
+#include "./lists/linked_lists/linkedLists.h"
 
 int main(){
     LinkedList *l = create_linked_lst();
 
     insert_begin_lk(&l, 3);
-    insert_begin_lk(&l, 3);
-    insert_begin_lk(&l, 3);
+    insert_begin_lk(&l, 4);
+    insert_begin_lk(&l, 5);
     
-    l = remove_end_lk(l);
-
-    show_lk(l);
+    show_lk_rec_reverse(l);
 }
