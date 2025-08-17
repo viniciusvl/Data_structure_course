@@ -1,6 +1,6 @@
-Each .h file has a short explanantion about advantages and disadvantages for the data structure and functions to manipulate those structures. The file that contains the functions is in the same directory.
+Each .h file has a short explanantion about advantages and disadvantages of the data structure and functions for manipulate these structures. The implementation file is in the same directory.
 
-To use these functions, it's necessary import with this way:
+You should include them as follows:
 
 ## #include "{directory}/{file}.h"
 
