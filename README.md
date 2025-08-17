@@ -2,7 +2,7 @@ Each .h file has a short explanantion about advantages and disadvantages for the
 
 To use these functions, it's necessary import with this way:
 
-## #include "<directory>/<file>.h"
+## #include "{directory}/{file}.h"
 
 ## Topics:
 
