@@ -34,6 +34,8 @@ void free_lk(struct node **);
 
 LinkedList *ordered_insert_lk(struct node *, int);
 
+int is_empty_lk(struct node *);
+
 void insert_begin_lk(struct node **, int);
 
 void insert_end_lk(struct node *, int);
