@@ -1,6 +1,8 @@
 #ifndef DOUBLY_H
 #define DOUBLY_H
 
+#include "../singly/linkedLists.h"
+
 /*
 -------------------------------- EXPLANATION ------------------------------------------
 
@@ -28,8 +30,11 @@
 
 typedef struct doubly {
     int info;
-    Double_LK *ant; 
-    Double_LK *prox;
-} Double_LK;
+    Doubly_LK *ant; 
+    Doubly_LK *prox;
+} Doubly_LK;
+
+struct doubly *ins_begin_doubly(struct doubly *, int);
+
 
 #endif 
