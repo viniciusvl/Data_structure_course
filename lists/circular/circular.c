@@ -1,4 +1,5 @@
 #include "circular.h"
+#include "../singly/linkedLists.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -29,6 +30,32 @@ struct node *ins_begin_cir_lk(LinkedList *l, int value){
 
     return l;
 }
+
+struct node *rem_begin_cir(LinkedList *l){
+    if (is_empty_lk(l)){
+        printf("List is empty\n");
+        return l;
+    }    
+
+    struct node *last = l;
+
+    while (last->prox != l){
+        last = last->prox;
+    }
+
+    if (last == l){
+        free(l);
+
+        return NULL;
+    }
+
+    last->prox = l->prox;
+    free(l);
+    l = last->prox;
+
+    return l;
+}
+
 
 void show_c_lk(LinkedList *l){
     struct node *p = l;

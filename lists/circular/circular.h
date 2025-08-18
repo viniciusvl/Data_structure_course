@@ -20,6 +20,8 @@
 
 struct node *ins_begin_cir_lk(LinkedList *, int);
 
+struct node *rem_begin_cir(LinkedList *);
+
 void show_c_lk(LinkedList *);
 
 #endif 
