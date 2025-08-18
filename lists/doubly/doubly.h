@@ -34,7 +34,15 @@ typedef struct doubly {
     Doubly_LK *prox;
 } Doubly_LK;
 
+void free_doubly(struct doubly *);
+
 struct doubly *ins_begin_doubly(struct doubly *, int);
+
+struct doubly *ordered_ins(struct doubly *, int);
+
+struct doubly *rem_begin(struct doubly *, int);
+
+struct doubly *rem_element(struct doubly *, int);
 
 
 #endif 
