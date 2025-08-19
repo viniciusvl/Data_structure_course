@@ -30,6 +30,8 @@ typedef struct node {
 
 LinkedList *create_linked_lst();
 
+LinkedList *concat_lk(LinkedList *, LinkedList *);
+
 void free_lk(struct node **);
 
 LinkedList *ordered_insert_lk(struct node *, int);

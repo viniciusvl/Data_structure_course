@@ -2,6 +2,24 @@
 #include <stdlib.h>
 #include "doubly.h"
 
+struct doubly *concat_lk_d(struct doubly *l1, struct doubly *l2){
+    if (l1 == NULL){
+        printf("List is empty\n");
+        return NULL;
+    }
+
+    struct doubly *p = l1;
+    while (p->prox != NULL){
+        p = p->prox;
+    }
+
+    p->prox = l2;
+    l2->ant = p;
+
+    return l1;
+}
+
+
 void free_doubly(struct doubly *l){
     if (is_empty_lk(l)){
         printf("The list is empty\n");

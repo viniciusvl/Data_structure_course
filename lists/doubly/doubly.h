@@ -34,6 +34,8 @@ typedef struct doubly {
     Doubly_LK *prox;
 } Doubly_LK;
 
+void concat_lk_d(struct doubly *, struct doubly *);
+
 void free_doubly(struct doubly *);
 
 struct doubly *ins_begin_doubly(struct doubly *, int);

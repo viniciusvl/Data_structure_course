@@ -7,6 +7,22 @@ LinkedList *create_linked_lst(){
     return NULL;
 }
 
+LinkedList *concat_lk(LinkedList *l1, LinkedList *l2){
+    if (l1 == NULL){
+        printf("Empty list");
+        exit(1);
+    }
+
+    struct node *p = l1;
+
+    while (p->prox != NULL){
+        p = p->prox;
+    }
+    p->prox = l2;
+
+    return l1;
+}
+
 // It's O(1), because assigning pointers 
 void insert_begin_lk(struct node **header, int value){
     struct node *new = (struct node *) malloc(sizeof(struct node));

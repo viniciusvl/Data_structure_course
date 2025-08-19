@@ -7,3 +7,7 @@ This directory has 4 variants of lists:
     - Doubly: size is dinamyc, eache node has 2 pointers: to the last and next node 
 
     - Circular: size is dinamyc, the last node apointers to the first node
+
+----------------------------- GENERAL EXPLICATIONS -------------------------------
+
+**Cache misses**: Lists are bad to perfomance because of cache miss, i.e. CPU can not make cache, because nodes in a list are not contiguos in memory. Therefore, CPU need more process to get the information 
