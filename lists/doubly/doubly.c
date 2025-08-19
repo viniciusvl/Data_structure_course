@@ -3,7 +3,21 @@
 #include "doubly.h"
 
 void free_doubly(struct doubly *l){
+    if (is_empty_lk(l)){
+        printf("The list is empty\n");
+        return l;
+    }
+
+    struct doubly *p = l->prox,
+                  *ant = NULL;
     
+    while (p != NULL){
+        ant = p;
+        p = p->prox;
+
+        free(ant);
+    }
+    free(l);
 }
 
 struct doubly *ins_begin_doubly(struct doubly *l, int value){
