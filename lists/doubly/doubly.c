@@ -74,11 +74,49 @@ struct doubly *ordered_ins(struct doubly *l, int value){
 }
 
 struct doubly *rem_begin(struct doubly *l, int value){
+    if (is_empty_lk(l)){
+        printf("The list is empty\n");
+        return l;
+    }
 
+    struct doubly *nodeToRem = l;
+
+    l->prox->ant = NULL;
+    l = l->prox;
+
+    free(nodeToRem);
+
+    return l;
 }
 
 struct doubly *rem_element(struct doubly *l, int value){
+    if (is_empty_lk(l)){
+        printf("The list is empty\n");
+        return l;
+    }
 
+    struct doubly *current = l;
+    while (current->info != value && current != NULL){
+        current = current->prox;
+    }
+
+    if (!current){
+        printf("Value is not in the list\n");
+        return l;
+    }
+        
+    if (current->ant == NULL){
+        if (current->prox != NULL){
+            l->prox->ant = NULL;
+        }
+
+        l = l->prox;
+    } else {
+        current->ant->prox = current->prox;
+        current->prox->ant = current ->ant;
+    }
+
+    free(current);
 }
 
 
