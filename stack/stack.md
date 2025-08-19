@@ -2,21 +2,26 @@ OBS.: this directory has 2 stack implementations:
     - array: stack are implemented with static array, i.e, maximum size is defined 
     - linked lists: implemented with dinamyc size
 
+## stack_s means **stack static**
+
+## stack_d means **stack dinamyc**
+
+
 FUN FACT: "stack overflow" occurs when the maximum size of a stack is reached. For example,
 when a recursion is infinty.
 
--------------------------------- EXPLANATION ------------------------------------------
+## -------------------------------- EXPLANATION ------------------------------------------
     A stack is a data structure that: 
         1. Insert elements at the top
         2. Remove elements at the top
     Stacks can be implemented with array or linked lists.
 
--------------------------------- COMPLEXITY ------------------------------------------
+## -------------------------------- COMPLEXITY ------------------------------------------
 
     Insertions and removes: O(1), because we remove elements that are in the top
 
 
--------------------------------- APLICATIONS ------------------------------------------
+## -------------------------------- APLICATIONS ------------------------------------------
 
     1. C uses stack to call functions. Each functions has a scope, that is in the top. When
     use recursive, functions only see the variables that are in the top. The return adress is 

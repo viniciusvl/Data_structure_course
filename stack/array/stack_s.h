@@ -1,5 +1,5 @@
-#ifndef STACK_H
-#define STACK_H
+#ifndef STACK_S_H
+#define STACK_S_H
 
 /*
 
