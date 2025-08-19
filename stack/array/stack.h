@@ -3,27 +3,7 @@
 
 /*
 
-FUN FACT: "stack overflow" occurs when the maximum size of a stack is reached. For example,
-when a recursion is infinty.
-
--------------------------------- EXPLANATION ------------------------------------------
-    A stack is a data structure that: 
-        1. Insert elements at the top
-        2. Remove elements at the top
-    Stacks can be implemented with array or linked lists.
-
--------------------------------- COMPLEXITY ------------------------------------------
-
-    Insertions and removes: O(1), because we remove elements that are in the top
-
-
--------------------------------- APLICATIONS ------------------------------------------
-
-    1. C uses stack to call functions. Each functions has a scope, that is in the top. When
-    use recursive, functions only see the variables that are in the top. The return adress is 
-    stored in a stack. Therefore, when return values, the program back to the beginning 
-
-    2. Check syntax error in text editor
+OBS: this file implements stack with static arrays
 */
 
 #define MAX_SIZE 50
@@ -31,20 +11,20 @@ when a recursion is infinty.
 typedef struct stack {
     int n;
     int array[MAX_SIZE];
-} Stack;
+} Stack_s;
 
 // allocate a stack in the heap and returns a pointer
-Stack *create_stack();
+Stack_s *create_stack();
 
-void freeStack(Stack *);
+void freeStack(Stack_s *);
 
-void stackPush(Stack *, int);
+void stackPush(Stack_s *, int);
 
-int stackPop(Stack *);
+int stackPop(Stack_s *);
 
-int stackIsFull(Stack *);
+int stackIsFull(Stack_s *);
 
-int stackIsEmpty(Stack *);
+int stackIsEmpty(Stack_s *);
 
 
 

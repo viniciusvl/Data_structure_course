@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include "stack.h"
 
-Stack *create_stack(){
-    Stack *stack = (Stack *) malloc(sizeof(Stack));
+Stack_s *create_stack(){
+    Stack_s *stack = (Stack_s *) malloc(sizeof(Stack_s));
     if (!stack){
         printf("Stack was not allocated in the heap\n");
         return NULL;
@@ -14,11 +14,11 @@ Stack *create_stack(){
     return stack;
 }
 
-void freeStack(Stack *s){
+void freeStack(Stack_s *s){
     free(s);
 }
 
-void stackPush(Stack *s, int value){
+void stackPush(Stack_s *s, int value){
     if (stackIsFull(s)){
         printf("Stack is full\n");
         return;
@@ -28,7 +28,7 @@ void stackPush(Stack *s, int value){
     s->n = s->n + 1;
 }
 
-int stackPop(Stack *s){
+int stackPop(Stack_s *s){
     if (stackIsEmpty(s)){
         printf("Stack is empty\n");
         exit(1);
@@ -40,10 +40,10 @@ int stackPop(Stack *s){
     return value;
 }
 
-int stackIsFull(Stack *s){
+int stackIsFull(Stack_s *s){
     return s->n == MAX_SIZE;
 }
 
-int stackIsEmpty(Stack *s){
+int stackIsEmpty(Stack_s *s){
     return s->n == 0;
 }
