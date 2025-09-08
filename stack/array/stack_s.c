@@ -2,22 +2,31 @@
 #include <stdio.h>
 #include "stack_s.h"
 
-Stack_s *create_stack(){
-    Stack_s *stack = (Stack_s *) malloc(sizeof(Stack_s));
-    if (!stack){
-        printf("Stack was not allocated in the heap\n");
-        return NULL;
+// Stack with array has 2 elemments: an array and a controller 
+// controller is the last index of the array 
+
+
+// create stack with variable sizes
+Stack_s *create_stack(int size){
+    Stack_s *s = (Stack_s *) malloc(sizeof(Stack_s));
+    if (!s){
+        printf("It was not created stack\n");
+        exit(1);
     }
 
-    stack->n = 0;
+    s->array = (int *) malloc(sizeof(int) * size);
+    if (!s->array){
+        printf("It was not created stack's array\n");
+        exit(1);
+    }
 
-    return stack;
+    s->n = 0;
+    s->size = size;
+
+    return s;
 }
 
-void freeStack(Stack_s *s){
-    free(s);
-}
-
+// An stack insert elements at the top
 void stackPush(Stack_s *s, int value){
     if (stackIsFull(s)){
         printf("Stack is full\n");
@@ -40,10 +49,30 @@ int stackPop(Stack_s *s){
     return value;
 }
 
-int stackIsFull(Stack_s *s){
-    return s->n == MAX_SIZE;
+void freeStack(Stack_s **s){
+    free((*s)->array);
+    
+    free((*s));
+
+    *s = NULL;
+}
+
+void showStack(Stack_s *s){
+    if (stackIsEmpty(s)){
+        return;
+    }
+
+    int top = s->n;
+    while (top--){
+        printf("%d ", s->array[top]);
+    }
+    printf("\n");
 }
 
 int stackIsEmpty(Stack_s *s){
     return s->n == 0;
+}
+
+int stackIsFull(Stack_s *s){
+    return s->n >= s->size;
 }
