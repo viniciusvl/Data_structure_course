@@ -3,7 +3,7 @@
 
 /*
 
-OBS: this file implements stack with static arrays
+OBS: this file implements stack with arrays contiguos in heap memory
 */
 
 
@@ -13,7 +13,7 @@ typedef struct stack {
     int size;
 } Stack_s;
 
-// allocate a stack in the heap and returns a pointer
+// size of the stack
 Stack_s *create_stack(int);
 
 void freeStack(Stack_s **);
