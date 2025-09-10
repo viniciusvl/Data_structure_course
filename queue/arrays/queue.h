@@ -14,6 +14,8 @@ int emptyQueue(struct queue_s *);
 
 int fullQueue(struct queue_s *);
 
+struct queue_s *freeQueue_s(struct queue_s *);
+
 void ins_queue_s(struct queue_s *, int);
 
 int queueFull(struct queue_s *);

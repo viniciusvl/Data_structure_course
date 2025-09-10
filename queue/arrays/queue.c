@@ -24,7 +24,19 @@ struct queue_s *create_queue_s(int size){
 }
 
 int emptyQueue(struct queue_s *q){
-    return q->n == 0;
+    return !q || q->n == 0;
+}
+
+struct queue_s *freeQueue_s(struct queue_s *q){
+    if (emptyQueue(q)){
+        printf("Queue is empty\n");
+        exit(1);
+    }
+
+    free(q->array);
+    free(q);
+
+    return NULL;
 }
 
 int fullQueue(struct queue_s *q){
@@ -58,7 +70,7 @@ int remove_queue_s(struct queue_s *q){
 }
 
 void showQueue(struct queue_s *q){
-    if (q->n == 0){
+    if (emptyQueue(q) || !q){
         printf("Queue is empty\n");
         return;
     }
