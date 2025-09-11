@@ -1,0 +1,1 @@
+Queues are data structures that insertion happens at the end and removals at the beginning
