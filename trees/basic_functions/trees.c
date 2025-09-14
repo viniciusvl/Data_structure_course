@@ -32,7 +32,7 @@ Tree *free_tree(Tree *t){
 
     if (!empty_tree(t)){
         free_tree(t->left);
-        free_right(t->right);
+        free_tree(t->right);
 
         free(t);
     }
