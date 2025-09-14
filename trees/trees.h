@@ -18,6 +18,9 @@ Tree *free_tree(Tree *);
 
 void show_tree(Tree *);
 
+// Show: sub left tree -> source -> sub right tree
+void show_tree_direto(Tree *);
+
 int tree_has(Tree *, int value);
 
 #endif

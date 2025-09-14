@@ -54,6 +54,16 @@ void show_tree(Tree *t){
     }   
 }
 
+void show_tree_direto(Tree *t){
+    if (!empty_tree(t)){
+        show_tree_direto(t->left);
+
+        printf("%d ", t->info);
+        
+        show_tree_direto(t->right);
+    }
+}
+
 // verify if a tree has a value
 int tree_has(Tree *t, int value) {
     if (empty_tree(t)){
