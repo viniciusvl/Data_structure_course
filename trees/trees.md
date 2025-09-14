@@ -1,3 +1,10 @@
+# SCHEMAS:
+
+- **basic_functions** has function to show, free and create tree
+
+- **BST** has function about BST, i.e, Binary Seach Tree, for example:
+    - Insert node 
+
 # TREES
 
 Trees are non linear data structures. They are useful to represent hierarchical relations between data.
