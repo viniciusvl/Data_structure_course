@@ -6,21 +6,6 @@ Tree *create_empty_tree(){
     return NULL;
 }
 
-Tree *free_tree(Tree *t){
-    // This function knows that a node is a leaf when left and right side points to NULL
-    // Firstly, it iterates through the left side of the tree until to arrive a leaf
-    // So, it iterates through right side until a leaf  
-
-    if (!empty_tree(t)){
-        free_tree(t->left);
-        free_right(t->right);
-
-        free(t);
-    }
-
-    return NULL;
-}
-
 Tree *create_node(int value, Tree *left, Tree *right) {
     Tree *t = (Tree *) malloc(sizeof(Tree));
     if (!t) {
@@ -40,6 +25,21 @@ int empty_tree(Tree *t){
     return t == NULL;
 }
 
+Tree *free_tree(Tree *t){
+    // This function knows that a node is a leaf when left and right side points to NULL
+    // Firstly, it iterates through the left side of the tree until to arrive a leaf
+    // So, it iterates through right side until a leaf  
+
+    if (!empty_tree(t)){
+        free_tree(t->left);
+        free_right(t->right);
+
+        free(t);
+    }
+
+    return NULL;
+}
+
 
 void show_tree(Tree *t){
     // if tree is NOT empty
@@ -52,4 +52,15 @@ void show_tree(Tree *t){
         show_tree(t->right);
         // Nodes that only has right side are showed to
     }   
+}
+
+// verify if a tree has a value
+int tree_has(Tree *t, int value) {
+    if (empty_tree(t)){
+        return 0;
+    }
+    // This search don't iterate over whole tree. It stops when the target is found
+    // because if t->info is true, the program don't evaluate the whole expression
+    // This also happens with others elements
+    return t->info == value || tree_has(t->left, value) || tree_has(t->right, value); 
 }
